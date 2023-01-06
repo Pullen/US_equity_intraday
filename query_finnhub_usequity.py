@@ -2,6 +2,8 @@
 """
 Queries Finhub API for US Equity book or trade data and saves pickled DataFrames of this data
 in a symbol/day directory structure created by this script.
+Uses Multiprocessing with an upper limit of 80% of cpu cores.  Finnhub API rate limit is divided
+between these processes. 
 
 Arguments:
 --sym-file csv with 3 rows where
